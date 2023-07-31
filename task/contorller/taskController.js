@@ -37,7 +37,7 @@ const createTask = async (req, res) => {
       const latestTask = await Task.findOne().sort({ createdAt: -1 });
   if (latestTask) {
     const lastTaskNo = parseInt(latestTask.taskNo.slice(1));
-    taskNo`t${lastTaskNo + 1}`;
+    taskNo = `t${lastTaskNo + 1}`;
   } 
 
       const task = new Task({ title, description, createdBy, taskNo });
